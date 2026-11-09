@@ -50,7 +50,6 @@ class GuessRequest(BaseModel):
 
 @app.post("/api/new-game")
 def start_new_game(hard_mode: bool = False):
-    """ 建立新一局遊戲，支援 hard_mode 參數 """
     global total_games
     total_games += 1
 
@@ -67,7 +66,6 @@ def start_new_game(hard_mode: bool = False):
 
 @app.post("/api/guess")
 def process_guess(req: GuessRequest):
-    """ 接收玩家猜測，比對答案並回傳顏色結果與狀態 """
     global wins
     game_id = req.game_id
     guess = req.guess.upper()
@@ -135,7 +133,6 @@ def process_guess(req: GuessRequest):
 
 @app.get("/api/stats")
 def get_stats():
-    """ 取得勝率統計 API """
     win_rate = (wins / total_games * 100) if total_games > 0 else 0.0
     return {
         "total_games": total_games,
