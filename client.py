@@ -3,7 +3,7 @@ import os
 import pygame
 import requests
 
-API_BASE_URL = "https://pygame-1-t8s1.onrender.com"
+API_BASE_URL = "https://wordle-server-a076-6olk.onrender.com"
 
 COLOR_BG = (18, 18, 19)
 COLOR_TEXT = (255, 255, 255)
